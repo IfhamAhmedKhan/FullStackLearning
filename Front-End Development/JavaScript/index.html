@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        "use strict"
+        let a = 34
+        console.log(a)
+
+        function hello(){
+            console.log("Hello to my world of programming")
+        }
+
+        let obj_A = {
+            a: "apple",
+            b: "ball",
+            c: "cat",
+            f: function myfunc(number) {
+                console.log("This is your number: "+ number)
+            }
+        }
+
+        document.addEventListener("click", function click(){
+            console.log("clicked")
+            alert("Hello")
+            let conf = confirm("You clicked?")
+            console.log(conf)
+        })
+
+        // call back
+        setTimeout(() => {
+            console.log("oh I will run once first is done")
+        }, 3000);
+        console.log("I will run first")
+
+        // promises
+        
+    </script>
+</head>
+<body>
+    <p>Hello, I am learning js</p>
+</body>
+</html>
