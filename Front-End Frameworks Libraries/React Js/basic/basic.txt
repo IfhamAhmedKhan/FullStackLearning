@@ -1,0 +1,11 @@
+Website link to learn react
+https://reactjs.org/ 
+
+-------------------------------------
+Basic commands for react 
+
+npx create-react-app my-app // this is used to set up your react js theme
+npm start // to start the server of your react app
+npm run build // to make a static build of your website 
+
+-------------------------------------
