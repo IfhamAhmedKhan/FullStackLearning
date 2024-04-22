@@ -1,0 +1,15 @@
+----------run django-------------
+django-admin
+dir
+(change directory)
+python manage.py runserver
+
+-----------Pipelining------------
+chatcount
+spaceremove
+newlineremove
+capfirst
+removepunc
+
+-----------templates--------------
+templates
