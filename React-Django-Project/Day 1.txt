@@ -1,0 +1,46 @@
+-----------basic structure---------------
+pip install django djangorestframework
+
+cd React-Django-Project
+
+django-admin startproject music_controller
+
+cd music_controller
+
+django-admin startapp api
+
+----------Changes in music_controller -> settings.py -------------------
+'api.apps.ApiConfig',
+'rest_framework'
+
+----------api -> views.py------------------
+from django.shortcuts import render
+from django.http import HttpResponse
+
+# Create your views here.
+def main(request):
+	return HttpResponse("Hello")
+
+---------Make urls.py in api folder----------------
+from django.urls import path
+from .views import main
+
+urlpatterns = [
+    path('', main)
+]
+
+---------Changes in music_controller urls.py-----------
+from django.contrib import admin
+from django.urls import path, include
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', include('api.urls'))
+]
+
+--------Run web server on terminal----------------
+python .\manage.py makemigrations
+
+python .\manage.py migrate
+
+python .\manage.py runserver
