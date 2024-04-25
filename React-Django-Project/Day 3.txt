@@ -1,0 +1,42 @@
+django-admin startapp frontend
+
+cd .\frontend\
+
+create folder templates
+create folder static
+inside static make 3 folder (frontend, css, images)
+create folder src
+inside src create components
+
+---------------------------
+npm init -y
+
+npm i webpack-cli --save-dev
+
+npm i @babel/core babel-loader @babel/preset-env @babel/preset-react --save-dev
+
+npm i react react-dom --save-dev
+
+npm install @material-ui/core
+
+npm install @babel/plugin-proposal-class-properties
+
+npm install react-router-dom
+
+npm install @material-ui/icons
+
+
+------------------------------
+create file babel.config.json (copy paste code)
+create webpack.config.json (copy paste code)
+------------------------------
+
+-------------------frontend -> package.json------------------
+
+"dev": "webpack --mode development --watch",
+"build": "webpack --mode production"
+
+-----------------views.py----------------
+
+def index(request, *args, **kwargs):
+	return render(request, 'frontend/index.html')
