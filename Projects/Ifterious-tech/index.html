@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Main_Web/bq-final-project-images--main/logo.png"
+        type="image/x-icon" />
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <title>Ifterious | Login</title>
+<style>
+    a:hover{
+        color: red;
+    }
+    body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            /* Prevent scrollbars */
+            font-family: Arial, sans-serif;
+        }
+
+        .video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .box {
+            position: relative;
+            z-index: 1;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+</style>
+</head>
+
+<body>
+    <div class="video-container">
+        <video autoplay loop muted>
+            <source src="2022 Nitro 5 ｜ Gaming Laptop ｜ Acer.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <div class="box">
+        <div class="container">
+            <div class="top-header">
+                <span class="animate__animated animate__fadeIn">Don't have an account? <a href="sign-up.html"> Create
+                        one now.</a></span>
+                <header class="animate__animated animate__fadeIn">Login</header>
+            </div>
+            <form id="loginForm" action="Main_Web/index.html">
+                <div class="input-field">
+                    <label for="userName">
+                        <input type="text" id="userName" class="input animate__animated animate__pulse" placeholder="Username" required>
+                        <i class="bx bx-user"></i>
+                    </label>
+                </div>
+                <div class="input-field">
+                    <label for="userPassword">
+                        <input type="password" id="userPassword" class="input animate__animated animate__pulse" placeholder="Password" required
+                            minlength="8" maxlength="15">
+                        <i class="bx bx-lock-alt"></i>
+                    </label>
+                </div>
+                <div class="input-field">
+                    <button type="submit" class="submit animate__animated animate__pulse" value="Login">Login</bottom>
+                </div>
+            </form>
+            <div class="bottom">
+                <div class="left">
+                    <input type="checkbox" id="check">
+                    <label for="check" class="animate__animated animate__fadeIn"> Remember Me</label>
+                </div>
+                <div class="right">
+                    <label class="animate__animated animate__fadeIn"><a href="#" id="forgotPassword">Forgot password?</a></label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function (event) {
+            var username = document.getElementById('userName').value;
+            var password = document.getElementById('userPassword').value;
+            var name1 = "Ifham Khan"
+            var pass1 = "Qwerty123"
+            var name2 = "Adil Ahmed Shekhani"
+            var pass2 = "Qwerty123"
+            var name3 = "Iftantary"
+            var pass3 = "Union007"
+            var name4 = "Ifham"
+            var pass4 = "Qwerty123"
+            var name5 = "Afnan"
+            var pass5 = "Qwerty123"
+            var name6 = "Aayan"
+            var pass6 = "Qwerty123"
+            var new_account_username = localStorage.getItem('userName')
+            var new_account_password = localStorage.getItem('userPassword')
+            if ((name1 == username && pass1 == password) || (name2 == username && pass2 == password) || (name3 == username && pass3 == password) || (name4 == username && pass4 == password) || (name5 == username && pass5 == password) || (name6 == username && pass6 == password) || (new_account_username == username && new_account_password == password)) {
+                alert('Correct username and password.');
+            } else {
+                alert('Wrong password or username entered.');
+                event.preventDefault();
+            }
+        });
+
+        document.getElementById('forgotPassword').addEventListener('click', function (event) {
+            alert('Check your email for password reset instructions.');
+            event.preventDefault();
+        });
+    </script>
+</body>
+
+</html>
