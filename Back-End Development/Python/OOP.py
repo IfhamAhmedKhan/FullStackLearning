@@ -10,3 +10,6 @@ class house:
     
 ifham_house = house()
 print(ifham_house.kitchen())
+
+afnan_house = house()
+print(afnan_house.kitchen())
