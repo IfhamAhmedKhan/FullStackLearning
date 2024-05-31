@@ -13,3 +13,7 @@ print(ifham_house.kitchen())
 
 afnan_house = house()
 print(afnan_house.kitchen())
+
+
+aayan_house = house()
+print(aayan_house.kitchen())
