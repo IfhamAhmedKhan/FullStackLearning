@@ -36,3 +36,5 @@ class Multiplier:
 student_math = Multiplier()
 result = student_math.multi()
 print(result)
+
+#----------------------------------------
