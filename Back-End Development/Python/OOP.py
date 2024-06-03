@@ -17,3 +17,8 @@ print(afnan_house.kitchen())
 
 aayan_house = house()
 print(aayan_house.kitchen())
+ 
+
+farman_house = house()
+print(farman_house.kitchen())
+
