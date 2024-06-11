@@ -1,3 +1,5 @@
+from abc import ABC, abstractmethod
+
 # Inheritance
 # Base and Derived Classes:
 # Create a base class Animal with a method make_sound. Create a derived class Dog that overrides make_sound to print "Bark".
@@ -41,5 +43,25 @@ print(objOfPetDog.ownerAndDog())
 
 # Method Resolution Order
 print(PetDog.mro())
+print("--------------------------------")
+# Abstract Base Class:
+# Define an abstract base class Vehicle with an abstract method move. Create two derived classes, Car and Boat, that implement the move method.
 
+class Vehicle(ABC):
+    @abstractmethod
+    def move(self):
+        pass
+    
+class Car(Vehicle):
+    def move(self):
+        return "I am driving a car"
 
+class Boat(Vehicle):
+    def move(self):
+        return "I am driving a boat"
+    
+car = Car()
+boat = Boat()
+
+print(f"{car.move()}")
+print(f"{boat.move()}")
