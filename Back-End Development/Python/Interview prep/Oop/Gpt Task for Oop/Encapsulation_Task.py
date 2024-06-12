@@ -33,3 +33,17 @@ print(f"Welcome to Meezan Bank your account number is {bankObj.get_accountNumber
 
 # Name Mangling:
 # Demonstrate name mangling by trying to access the private attributes directly and explaining the error.
+# print(bankObj.__balance) will generate error because you cannot access private attribute directly outside the class
+
+# Protected Attributes:
+# Create a class Person with a protected attribute _age and a method to display the age.
+
+class Person:
+    def __init__(self,age):
+        self._age= age
+
+    def print_age(self):
+        return self._age
+    
+objPerson = Person(18)
+print(objPerson.print_age())
