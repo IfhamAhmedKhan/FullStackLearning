@@ -25,3 +25,8 @@ s.pop()
 print(s.values)
 print(s.peek())
 print(s.is_empty())
+
+# Queue Practice 
+class Queue:
+    def __init__(self):
+        self.values = []
