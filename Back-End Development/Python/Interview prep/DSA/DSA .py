@@ -28,6 +28,8 @@ print(s.values)
 print(s.is_empty())
 print(s.peek())
 
+print("--------------------------------")
+
 # Queue
 class Queue:
     def __init__(self):
@@ -54,3 +56,33 @@ Q.dequeue()
 print(Q.values)
 print(Q.is_empty())
 print(Q.peek())
+
+print("--------------------------------")
+
+# Linked list
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+        
+# making nodes
+node1 = Node(10)
+node2 = Node(20)
+node3 = Node(30)
+node4 = Node(40)
+
+# connecting nodes 
+node1.next = node2
+node2.next = node3
+node3.next = node4 
+
+# printing nodes
+current = node1
+
+while current is not None:
+    print(current.data, end=" -> ")
+    current = current.next
+    
+print("None")
+
+print("--------------------------------")
