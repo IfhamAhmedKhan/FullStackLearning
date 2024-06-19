@@ -1,3 +1,4 @@
+
 # Stack
 class Stack:
     def __init__(self):
@@ -84,7 +85,6 @@ while current is not None:
     current = current.next
     
 print("None")
-
 
 
 print("--------------------------------")

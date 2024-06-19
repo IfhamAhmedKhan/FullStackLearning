@@ -52,3 +52,9 @@ ll.delete_node(3)
 ll.print_list()
 ll.delete_node(1)
 ll.print_list() 
+
+
+
+
+print("--------------------------------")
+
