@@ -65,26 +65,59 @@ class Node:
     def __init__(self, data):
         self.data = data
         self.next = None
-        
-# making nodes
+
+# Function to remove a node with a specific value
+def remove_node(head, value):
+    # If the list is empty
+    if head is None:
+        return head
+    
+    # If the node to be removed is the head node
+    if head.data == value:
+        return head.next
+    
+    # Find the node to be removed
+    current = head
+    while current.next is not None:
+        if current.next.data == value:
+            current.next = current.next.next
+            return head
+        current = current.next
+    
+    # If the node was not found
+    print(f"Node with value {value} not found.")
+    return head
+
+# Making nodes
 node1 = Node(10)
 node2 = Node(20)
 node3 = Node(30)
 node4 = Node(40)
 
-# connecting nodes 
+# Connecting nodes
 node1.next = node2
 node2.next = node3
-node3.next = node4 
+node3.next = node4
 
-# printing nodes
+# Printing the linked list before removal
+print("Before removal:")
 current = node1
-
 while current is not None:
     print(current.data, end=" -> ")
     current = current.next
-    
 print("None")
+
+# Remove a node with value 30
+node1 = remove_node(node1, 30)
+
+# Printing the linked list after removal
+print("After removal:")
+current = node1
+while current is not None:
+    print(current.data, end=" -> ")
+    current = current.next
+print("None")
+
 
 
 print("--------------------------------")
