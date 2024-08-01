@@ -1,12 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Portfolio</title>
+    <style>
+        table, td, th {
+            border: 2px solid black;
+            border-collapse: collapse;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
 </head>
 <body>
-    <h1>German language</h1>
-    <h2>A1 course</h2>
+    <header>
+        <h1>Ifham Ahmed Khan</h1>
+        <p>
+            Welcome to my portfolio webpage. My name is Ifham, and I graduated in BSCS from Muhammad Ali Jinnah University.
+            I am learning web development using React and Python. I find machine learning interesting since my final year project
+            was based on deep learning and generative AI.
+        </p>
+    </header>
+
+    <section>
+        <h2>Skills</h2>
+        <ul>
+            <li>Game programming</li>
+            <li>Mobile app development</li>
+            <li>Web development</li>
+            <li>Artificial Intelligence</li>
+            <li>Machine and deep learning</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Projects</h2>
+        <table>
+            <tr>
+                <th>Project Name</th>
+                <th>Description</th>
+                <th>Links</th>
+            </tr>
+            <tr>
+                <td>Ifterious Movie Success Predictor</td>
+                <td>
+                    This project offers movie success prediction based on previous data. It includes facial recognition
+                    and generative AI to generate multiple stories for movies based on different genres. Developed using Python,
+                    HTML, CSS, and Bootstrap, with Streamlit as the framework.
+                </td>
+                <td><a href="#">Project Link</a></td>
+            </tr>
+            <tr>
+                <td>Ifterious Tech</td>
+                <td>
+                    This project provides a platform for users to buy computer-related products like headphones, keyboards,
+                    and smartwatches. Developed using HTML, CSS, Bootstrap, and JavaScript. Features include user account creation,
+                    order placement, a search bar, checkout page, and location selection on a map.
+                </td>
+                <td><a href="#">Project Link</a></td>
+            </tr>
+        </table>
+    </section>
+
+    <footer>
+        <h2>Contact</h2>
+        <p>Email: ifham.khan105@gmail.com</p>
+        <p>Phone: 0316-1611907</p>
+        <p>LinkedIn: <a href="#">Ifham Ahmed Khan</a></p>
+    </footer>
 </body>
 </html>
