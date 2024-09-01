@@ -10,6 +10,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Product from "./components/Product.jsx";
 import { productData, responsive } from "./components/data.js";
+import './scrollbar.css'
 
 
 function App() {

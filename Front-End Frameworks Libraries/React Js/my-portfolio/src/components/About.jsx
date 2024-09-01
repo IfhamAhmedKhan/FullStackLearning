@@ -30,6 +30,7 @@ const About = () => {
                   <li>JavaScript, TypeScript, Kotlin</li>
                   <li>HTML/CSS, React, Streamlit</li>
                 </ul>
+                <br />
               </div>
               <div className="col-md-6">
                 <h4>Tools & Frameworks</h4>
@@ -47,6 +48,7 @@ const About = () => {
                   <li>Data Cleaning</li>
                   <li>Visualization</li>
                 </ul>
+                <br />
               </div>
               <div className="col-md-6">
                 <h4 className="languages-list">Languages</h4>
