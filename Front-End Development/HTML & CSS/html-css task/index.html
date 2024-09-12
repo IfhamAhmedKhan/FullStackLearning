@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Html/Css Task</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: "Open Sans", sans-serif;
+            text-decoration: none;
+            list-style: none;
+        } 
+        body {
+            background-color: #f4f4f4;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: #333;
+        }
+        .logo a{
+            color: white;
+            border-radius: 5px;
+            padding: 7px;
+            border: 2px solid black;
+            font-size: 20px;
+        }
+        .logo a:hover {
+            color: black;
+            background-color: #f4f4f4;
+        }
+        .nav-links {
+            display: flex;
+            gap: 15px;
+        }
+        .nav-links a {
+            color: white;
+            border: 2px solid black;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        .nav-links a:hover {
+            color: black;
+            background-color: #f4f4f4;
+        }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 4px 0;
+        }
+        .intro-sec {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        img {
+            width: 250px;
+            height: 250px;
+            border-radius: 20px;
+            border: 2px solid black;
+        }
+        img:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+        }
+        .intro-sec p{
+            text-align: left;
+            font-size: 20px;
+            max-width: 600px;
+        }
+        .table-sec {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+        table, th, td {
+            border: 2px solid black;
+            text-align: center;
+            padding: 10px;
+            border-collapse: collapse;
+        }
+        .form-sec {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+        footer {
+            display: flex;
+            justify-content: center;
+            padding: 15px;
+            background-color: #333;
+            color: white;
+        }
+        fieldset{
+            background-color: white;
+            border-radius: 5px;
+            border: 2px solid black;
+        }
+        form {
+            padding: 10px;
+            width: 300px;
+        }
+        input, textarea {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 8px;
+        }
+        textarea {
+            height: 100px;
+        }
+        .btn {
+            display: flex;
+            justify-content: center;
+        }
+        button {
+            padding: 7px;
+            font-weight: bold;
+            background-color: rgb(50, 245, 50);
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: rgb(34, 215, 34);
+        }
+        @media screen and (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .hamburger {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="#">Sarah Waqar</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">About</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </nav>
+    </header>
+    <main><br><hr><br>
+        <h1>Introduction</h1><br>
+        <section class="intro-sec">
+            <img src="OIG4-1.png" alt="pic with friend">
+            <p>This is a picture of me and my lovely friend Emma. She is such a sweet moon pie. In this picture, she took my hairband, but she is so adorable. Emma is always interested in things I cannot mention here, and she can be a mischievous bunny too!</p>
+        </section>
+        <br><hr><br>
+        <h1>Projects</h1><br>
+        <section class="table-sec">
+            <table>
+                <tr>
+                    <th>No.</th>
+                    <th>Project Name</th>
+                    <th>Description</th>
+                    <th>Links</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Ifterious Brick Breaker</td>
+                    <td>Game development project</td>
+                    <td><a href="https://www.brickbreaker.com" target="_blank">Click here!</a></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>My Personal Portfolio</td>
+                    <td>Web development project</td>
+                    <td><a href="https://www.iftportfolio.com" target="_blank">Click here!</a></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Ifterious Tech</td>
+                    <td>E-commerce store project</td>
+                    <td><a href="https://www.ifterioustech.com" target="_blank">Click here!</a></td>
+                </tr>
+            </table>
+        </section>
+        <br><hr><br>
+        <h1>Contact Form</h1><br>
+        <section class="form-sec">
+            <fieldset>
+                <legend>Contact Form</legend>
+                <form action="index.html">
+                    <label for="name">Name</label><br>
+                    <input type="text" name="name" id="name" placeholder="Your Name" required><br>
+
+                    <label for="email">Email</label><br>
+                    <input type="email" name="email" id="email" placeholder="Your Email" required><br>
+
+                    <label for="message">Message</label><br>
+                    <textarea name="message" id="message" placeholder="Your Message"></textarea><br>
+
+                    <div class="btn">
+                    <button type="submit">Submit</button>
+                    </div>
+                </form>
+            </fieldset>
+        </section>
+        <br><hr>
+    </main>
+    <footer>
+        <p>&copy; Ifterious Tech</p>
+    </footer>
+</body>
+</html>
