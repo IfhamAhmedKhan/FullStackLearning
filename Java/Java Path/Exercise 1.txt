@@ -1,0 +1,21 @@
+class Main {
+    public static void main(String[] args) {
+        // Declare and initialize variables for each of the primitive types. Print their values.
+        int age = 23;
+        String name = "Ifham Ahmed Khan";
+        char grade = 'A';
+        boolean gamer = true;
+        float Cgpa = 3.48f;
+        System.out.println("Age: "+age+"\nName: "+name+"\nGrade: "+grade+"\nGamer: "+gamer+"\nCGPA: "+Cgpa);
+        // Create an array of 5 integers and write a loop to print all the elements.
+        // (Bonus) Find the sum of all elements in an array.
+        int[] arr = {1,2,3,4,5};
+        int sum = 0;
+        for(int i = 0;i<arr.length;i++){
+            System.out.println(arr[i]);
+            sum = sum + arr[i];
+        }
+        
+        System.out.println("Sum: "+sum);
+    }
+}
