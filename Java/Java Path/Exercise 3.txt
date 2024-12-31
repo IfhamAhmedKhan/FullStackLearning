@@ -1,0 +1,31 @@
+class Main {
+    // Method to check if the number is even
+    public static boolean isEven(int number){
+        return number % 2 == 0;  
+    }
+    
+    // Method to calculate the area of a circle
+    public static double calculateArea(int radius){
+        return (Math.PI * radius * radius);  
+    }
+    
+    // Method to check if a number is prime
+    public static boolean primeChecker(int value){
+        if (value <= 1) {
+            return false; 
+        }
+        for (int i = 2; i <= Math.sqrt(value); i++) {  
+            if (value % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+    
+    public static void main(String[] args) {
+        System.out.println(isEven(5));       
+        System.out.println(calculateArea(5)); 
+        System.out.println(primeChecker(4)); 
+        System.out.println(primeChecker(7));  
+    }
+}
