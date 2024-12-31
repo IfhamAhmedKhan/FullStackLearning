@@ -1,0 +1,46 @@
+import java.util.Scanner;
+class Main{
+    public static void main(String[] args){
+        // Write a program that takes an integer input and prints whether it is even or odd using if-else.
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter a number");
+        int num = input.nextInt();
+        if(num<=0){
+            System.out.println("Enter number above zero");
+        }else if(num%2==0){
+            System.out.println(num+" is a even number");
+        }else{
+            System.out.println(num+" is a Odd number");
+        }
+        // Write a program using a while loop to calculate the factorial of a number.
+        int number = 5;
+        int fact = 1;
+        while(number>0){
+            fact = fact * number;
+            number--;
+        }
+        System.out.println("Factorial: "+fact);
+        // Write a do-while loop program to print numbers from 1 to 10.
+        int value = 1;
+        do{
+            System.out.println(value);
+            value++;
+        }while(value<=10);
+        // (Bonus) Write a nested loop program to print the following pattern:
+        /*
+        *
+        **
+        ***
+        ****
+        *****
+        */
+        for (int i = 0; i <= 4 ; i++){
+            for(int j = 0; j <= i ; j++){
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+}
+
+
