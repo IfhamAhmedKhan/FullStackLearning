@@ -1,0 +1,136 @@
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+        // steps 1: Section 1: Data Types and Variables
+        // Declare variables for each of the primitive data types (int, double, char, boolean). Assign appropriate values to them and print their values.
+        int age = 23;
+        double money = 200050;
+        char grade = 'A';
+        boolean pass = true;
+        float cgpa = 3.48f;
+        System.out.println("Age: "+age+"\nMoney: "+money+"\nGrade: "+grade+"\nPass: "+pass+"\nCGPA: "+cgpa);
+        // What is the difference between float and double in Java?
+        // float is different from double because float consist decimal point value and is less compare to double, double is a big value and take more space in memory compare to float
+        
+        // Section 2: Arrays and Multi-Dimensional Arrays
+        // ->  Write a program to:
+        // Declare an array of 5 integers.
+        // Populate it with numbers.
+        // Find the maximum number in the array.
+        int[] arr = {1,5,2,3,10};
+        int max = arr[0];
+        for (int i = 0; i <= arr.length-1; i++ ){
+            if(max<arr[i]){
+                max = arr[i];
+            }
+        }
+        System.out.println("Max value: "+max);
+        //Declare a 2D array (3 rows and 3 columns) and fill it with numbers from 1 to 9. Print it in a matrix format.
+        int[][] arr2 = {{1,2,3},
+                        {4,5,6},
+                        {7,8,9},};
+        for(int i=0;i<=arr2.length-1;i++){
+            for(int j=0;j<=arr2.length-1;j++){
+                System.out.print(arr2[i][j]+" ");
+            }
+            System.out.println();
+        }
+        
+        // Section 3: Control Flow
+        // Write a program to print all even numbers between 1 and 20 using a for loop.
+        for(int i= 2;i<=20;i++){
+            System.out.println(i);
+            i++;
+        }
+        
+        // Rewrite the above program using a while loop.
+        int val = 2;
+        while(val <= 20){
+            System.out.println(val);
+            val++;
+            val++;
+        }
+        
+        // What is the difference between for, while, and do-while loops? Explain briefly.
+        // okay for loop is the basic loop we all start learning in start it use systax like for(int i = 0;i<=length;i++) like this it indicates that start of loop and for which lenght it will run and counter also increase there as well but in while loop things are different we create it using while(condition) and then we use increment condition inside {} while block, for do while it runs the code inside it in first run later it check the condition in while(condition); this is the difference between them also there is one more loop called for each hehe 
+        
+        // Section 4: Conditional Statements
+        // Write a program that:
+        // Takes a number as input.
+        // Prints "Positive" if the number is greater than 0, "Negative" if it's less than 0, and "Zero" otherwise.
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter a number: ");
+        int num = input.nextInt();
+        if(num>0){
+            System.out.println("Positive");
+        }else if(num<0){
+            System.out.println("Negative");
+        }else{
+            System.out.println("Zero");
+        }
+
+        // Write a switch-case statement to print the day of the week for a given integer input (1 = Sunday, 2 = Monday, ..., 7 = Saturday).
+        System.out.println("Enter a number of day: ");
+        int day = input.nextInt();
+        switch(day){
+            case 1:
+                System.out.println("Sunday");
+                break;
+                
+            case 2:
+                System.out.println("Monday");
+                break;
+                
+            case 3:
+                System.out.println("Tuesday");
+                break;
+                
+            case 4:
+                System.out.println("Wednesday");
+                break;
+                
+            case 5:
+                System.out.println("Thursday");
+                break;
+                
+            case 6:
+                System.out.println("Friday");
+                break;
+                
+            case 7:
+                System.out.println("Saturday");
+                break;
+                
+            default:
+                System.out.println("Wrong number fool!");
+                break;
+        }
+        
+        // Section 5: Functions and Methods
+        // Write a method isPositive() that takes an integer as input and returns true if the number is positive, and false otherwise.
+        System.out.println(isPositive(10));
+        
+        // Overload the isPositive() method to accept a double as input and perform the same check.
+        System.out.println(isPositive(10000.000));
+
+        // Explain the difference between method overloading and method overriding.
+        //overloading is when we create different function of same name but with more parameter and overriding is when we create function in different class but we connect them using inheritance and we change the code block later we create child class object to run that method or parent class object to run parent class method
+        
+    }
+    
+    public static boolean isPositive(int number){
+        if(number>0){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    
+    public static boolean isPositive(double number){
+        if(number>0){
+            return true;
+        }else{
+            return false;
+        }
+    }
+}
