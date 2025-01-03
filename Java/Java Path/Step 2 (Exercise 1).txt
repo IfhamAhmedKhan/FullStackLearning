@@ -1,0 +1,32 @@
+class Main {
+    public static void main(String[] args) {
+        Person person1 = new Person("Ifham",24,"Karachi");
+        person1.introduce();
+        Person person2 = new Person("Afnan",17,"Karachi");
+        person2.introduce();
+        Person person3 = new Person("Aayan",13,"Karachi");
+        person3.introduce();
+    }
+}
+
+// Create a class called Person with the following fields: name, age, and city.
+// Add a constructor to initialize these fields.
+// Add a method called introduce() that prints: "Hi, I'm [name], [age] years old, from [city]."
+// Create 2-3 objects of Person in the main() method and call introduce().
+
+class Person{
+    // Fields
+    String name;
+    int age;
+    String city;
+    
+    Person(String name, int age, String city){
+        this.name = name;
+        this.age = age;
+        this.city = city;
+    }
+    
+    public void introduce(){
+        System.out.println("Hi, I'm "+this.name+", "+this.age+" years old, from "+this.city);
+    }
+}
