@@ -1,0 +1,75 @@
+// Question 1: Implementing Inheritance
+// Create a class hierarchy based on the following:
+
+// Base Class: Shape
+
+// Fields: color (String)
+// Constructor: Initialize the color.
+// Method: displayColor() → prints "This shape is [color]".
+
+// Derived Class: Circle
+
+// Additional Field: radius (double)
+// Constructor: Initialize color (via super) and radius.
+// Method: area() → calculate the area of the circle using π × radius².
+// Override: Add additional details to displayColor() to print: "This is a [color] circle.".
+
+
+class Main{
+    public static void main(String[] args){
+        Shape obj1 = new Shape("Yellow");
+        obj1.displayColor();
+        Circle obj2 = new Circle(55.3, "Red");
+        obj2.displayColor();
+        obj2.area();
+    }
+}
+
+class Shape{
+    String color;
+    Shape(String color){
+        this.color = color;
+    }
+    
+    void displayColor(){
+        System.out.println("This shape is "+this.color);
+    }
+}
+
+class Circle extends Shape{
+    double radius;
+    Circle(double radius, String color){
+        super(color);
+        this.radius = radius;
+    }
+    void area(){
+        double answer = Math.PI * (this.radius*this.radius); 
+        System.out.println("Area: "+answer);
+    }
+    @Override
+    void displayColor(){
+        System.out.println("This is a "+this.color+" circle");
+    }
+}
+/*
+class Parent {
+    void display() {
+        System.out.println("Parent class method");
+    }
+}
+
+class Child extends Parent {
+    void display() {
+        System.out.println("Child class method");
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        Parent obj = new Child();
+        obj.display();
+    }
+}
+*/
+
+// There is a class Parent which is a parent class base class, and another class child which is sub class of parent since it's extended with parents. Main class is Test where we have created object of parent class using child class and display Child class method because the object is of child class 
