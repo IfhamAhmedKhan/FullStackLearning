@@ -1,0 +1,74 @@
+// Task 1: Create an Encapsulated Class
+// Create a class called Student with the following:
+
+// Private Fields: name (String), age (int), grade (char).
+// Public getter and setter methods for each field.
+// In the setter methods, ensure:
+// age must be between 5 and 18; otherwise, set it to a default value of 5.
+// grade must be between 'A' and 'F'; otherwise, set it to 'F'.
+
+//--------------------------
+
+// 2. In the Main class:
+
+// Create an object of Student.
+// Set invalid values for age and grade, and display the corrected values using the getters.
+// Set valid values for name, age, and grade, and display them.
+
+class Main{
+    public static void main(String[] args){
+        Student obj = new Student();
+        
+        // For invalid values
+        obj.nameSetter("Manola");
+        obj.ageSetter(23);
+        obj.gradeSetter('G');
+        System.out.println("Name: "+obj.nameGetter());
+        System.out.println("Age: "+obj.ageGetter());
+        System.out.println("Grade: "+obj.gradeGetter());
+        
+        // For valid values
+        obj.nameSetter("Afnan");
+        obj.ageSetter(17);
+        obj.gradeSetter('A');
+        System.out.println("Name: "+obj.nameGetter());
+        System.out.println("Age: "+obj.ageGetter());
+        System.out.println("Grade: "+obj.gradeGetter());
+    }
+}
+
+class Student{
+    private String name;
+    private int age;
+    private char grade;
+    
+    public void nameSetter(String name){
+        this.name = name;    
+    }
+    public void ageSetter(int age){
+        if(age>=5 && age<=18){
+            this.age = age;   
+        }else{
+            this.age = 5;
+        }
+    }
+    public void gradeSetter(char grade){
+        if(grade>='A' && grade<='F'){
+            this.grade = grade;    
+        }else{
+            this.grade = 'F';
+        }
+        
+    }
+    
+    public String nameGetter(){
+        return this.name;
+    }
+    public int ageGetter(){
+        return this.age;
+    }
+    public char gradeGetter(){
+        return this.grade;
+    }
+    
+}
