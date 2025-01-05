@@ -1,0 +1,50 @@
+// Task: Polymorphism Example
+// Create an abstract class called Animal:
+
+// Define an abstract method makeSound().
+// Include a concrete method sleep(), which prints "This animal is sleeping."
+
+// Create two subclasses of Animal:
+
+// Dog class:
+// Override the makeSound() method to print "Woof!"
+// Cat class:
+// Override the makeSound() method to print "Meow!"
+
+// In the Main class:
+
+// Create instances of Dog and Cat.
+// Call the makeSound() method on both objects.
+// Call the sleep() method on both objects to show that the concrete method from the parent class can be used by both subclasses.
+class Main {
+    public static void main(String[] args) {
+        Dog obj1 = new Dog();
+        Cat obj2 = new Cat();
+        obj1.makeSound();
+        obj2.makeSound();
+        obj1.sleep();
+        obj2.sleep();
+    }
+}
+
+abstract class Animal{
+    public abstract void makeSound();
+    
+    public void sleep(){
+        System.out.println("This animal is sleeping");
+    }
+}
+
+class Dog extends Animal{
+    @Override
+    public void makeSound(){
+        System.out.println("Woof!");
+    }
+}
+
+class Cat extends Animal{
+    @Override
+    public void makeSound(){
+        System.out.println("Meow!");
+    }
+}
