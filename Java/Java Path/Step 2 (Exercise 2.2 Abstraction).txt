@@ -1,0 +1,81 @@
+// Abstract Class Example
+abstract class Animal {
+    // Abstract method
+    abstract void sound();
+
+    // Non-abstract method
+    public void eat() {
+        System.out.println("This animal eats food.");
+    }
+}
+
+// Subclass: Dog
+class Dog extends Animal {
+    @Override
+    void sound() {
+        System.out.println("Dog barks: Woof Woof!");
+    }
+}
+
+// Subclass: Cat
+class Cat extends Animal {
+    @Override
+    void sound() {
+        System.out.println("Cat meows: Meow Meow!");
+    }
+}
+
+// Interface Example
+interface Vehicle {
+    void start();
+    void stop();
+}
+
+// Implementing Interface: Car
+class Car implements Vehicle {
+    @Override
+    public void start() {
+        System.out.println("Car is starting...");
+    }
+
+    @Override
+    public void stop() {
+        System.out.println("Car is stopping...");
+    }
+}
+
+// Implementing Interface: Bike
+class Bike implements Vehicle {
+    @Override
+    public void start() {
+        System.out.println("Bike is starting...");
+    }
+
+    @Override
+    public void stop() {
+        System.out.println("Bike is stopping...");
+    }
+}
+
+// Main Class
+class Main {
+    public static void main(String[] args) {
+        // Abstract Class Example
+        Animal dog = new Dog();
+        dog.sound();
+        dog.eat();
+
+        Animal cat = new Cat();
+        cat.sound();
+        cat.eat();
+
+        // Interface Example
+        Vehicle car = new Car();
+        car.start();
+        car.stop();
+
+        Vehicle bike = new Bike();
+        bike.start();
+        bike.stop();
+    }
+}
