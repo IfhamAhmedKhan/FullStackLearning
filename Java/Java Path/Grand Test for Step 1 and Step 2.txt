@@ -1,0 +1,312 @@
+// Step 1: Solidify Your Basics (50 Marks)
+import java.util.Scanner;
+class Main {
+    // 6 (10 Marks) Write a function to calculate the factorial of a number. Include parameter passing and return the result.
+    public static int factorial(int num){
+        // 4 X 3 X 2 X 1
+        int answer = 1;
+        for(int i = num ; i>0; i--){
+            answer = answer * i;
+        }
+        return answer;
+    }
+    
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        
+        // 1 (5 Marks) Define a variable for each primitive data type and assign a value to it. Write the code
+        int age = 23;
+        float height = 5.9f;
+        double rank = 500.11;
+        boolean pass = true;
+        char grade = 'A';
+        System.out.println("Age: "+age);
+        System.out.println("Height: "+height);
+        System.out.println("Rank: "+rank);
+        System.out.println("Pass: "+pass);
+        System.out.println("Grade: "+grade);
+        
+        // 2 (5 Marks) Write a program to declare a 2D array and initialize it with values. Print the array in a matrix format.
+        int[][] arr1 = {{1,2,3},
+                        {4,5,6},
+                        {7,8,9},
+        };
+        for(int i=0;i<=arr1.length-1;i++){
+            for(int j=0;j<=arr1.length-1;j++){
+                System.out.print(arr1[i][j]+" ");
+            }
+            System.out.println();
+        }
+        // 3 (5 Marks) Write a code snippet to demonstrate the usage of for, while, and do-while loops with examples
+        //For loop:In for loop initilization and condition checking is done first then code is run afterwards increment is done and thus condition is checked again mostly used for 2d or array printing beside this there is one more loop called for each
+        for(int i=0;i<=5;i++){
+            System.out.println(i);
+        }
+        // While loop: In while loop initilaziation is done first then while code is written and it checks the condition then do increment inside the while block
+        int i1=0;
+        while(i1<=5){
+            System.out.println(i1);
+            i1++;
+        }
+        
+        // Do While: In do while code in do block run atleast 1 time before checking the condition which makes it different
+        int i2=0;
+        do{
+            System.out.println(i2);
+            i2++;
+        }while(i2<=5);
+        
+        // 4 (5 Marks) Create a program that takes an integer input and checks if it is even or odd using an if-else statement.
+        System.out.println("Enter a number: ");
+        int num1 = input.nextInt();
+        if(num1%2==0){
+            System.out.println("Even");
+        }else{
+            System.out.println("Odd");
+        }
+        
+        // 5 (5 Marks) Write a switch-case program to display the day of the week based on user input (1 for Monday, 2 for Tuesday, etc.).
+        System.out.println("Enter Day number: ");
+        int num2 = input.nextInt();
+        switch(num2){
+            case 1:
+                System.out.println("Monday");
+                break;
+                
+            case 2:
+                System.out.println("Tuesday");
+                break;
+                
+            case 3:
+                System.out.println("Wednesday");
+                break;
+                
+            case 4:
+                System.out.println("Thursday");
+                break;
+                
+            case 5:
+                System.out.println("Friday");
+                break;
+                
+            case 6:
+                System.out.println("Saturday");
+                break;
+                
+            case 7:
+                System.out.println("Sunday");
+                break;
+                
+            default:
+                System.out.println("Idiot your day haha");
+                break;
+        }
+        
+        // 6 answer
+        System.out.println(factorial(4));
+        
+        // 7 answer
+        add(5,10);
+        add(550.22,550.22,293.11);
+        
+    }
+    
+    // 7 (10 Marks) Explain method overloading and write a program with at least two overloaded methods (e.g., add(int a, int b) and add(double a, double b, double c)).
+    public static void add(int a,int b){
+        System.out.println(a+b);
+    }
+    
+    public static void add(double a,double b,double c){
+        System.out.println(a+b+c);
+    }
+    
+}
+
+// Step 2: Object-Oriented Programming (50 Marks)
+import java.util.Scanner;
+
+class Main {
+    public static void main(String[] args){
+        Person boyOne = new Person("Ifham",23);
+        boyOne.displayDetails();
+        Animal oneDog = new Animal("Leo");
+        oneDog.Sound();
+        Dog twoDog = new Dog("Rex");
+        twoDog.Sound();
+        Animal threeDog = new Dog("Lex");
+        threeDog.Sound();
+        A obj1 = new A();
+        obj1.add(5,3);
+        B obj2 = new B();
+        obj2.add(5,3);
+        Shape val1 = new Circle();
+        System.out.println(val1.calculateArea());
+        Shape val2 = new Rectangle();
+        System.out.println(val2.calculateArea());
+        ImportantPerson object = new ImportantPerson();
+        object.setName("Ifham");
+        System.out.println(object.getName());
+    }
+}
+
+// 1 (5 Marks) Create a class Person with attributes name and age, and a constructor to initialize these attributes. Write a method to display the details of the person.
+class Person{
+    String name;
+    int age;
+    
+    Person(String name, int age){
+        this.name = name;
+        this.age = age;
+    }
+    public void displayDetails(){
+        System.out.println("Name: "+this.name);
+        System.out.println("Age: "+this.age);
+    }
+}
+
+// 2 (10 Marks) Demonstrate inheritance by creating a base class Animal and a derived class Dog. Add methods in both classes and show how the Dog class inherits the behavior of Animal.
+class Animal{
+    String name;
+    
+    Animal(String name){
+        this.name = name;
+    }
+    
+    public void Sound(){
+        System.out.println(this.name +" make sounds");
+    }
+}
+
+class Dog extends Animal{
+    Dog(String name){
+        super(name);
+    }
+    
+    public void Sound(){
+        super.Sound();
+        System.out.println("Make sounds: Bark Bark");
+    }
+}
+
+// 3 (10 Marks) Create a program that demonstrates polymorphism using method overriding.
+class A{
+    public void add(int a, int b){
+        System.out.println(a+b);
+    }
+}
+
+class B extends A{
+    @Override
+    public void add(int a, int b){
+        System.out.println(a-b);
+    }
+}
+
+// 4 (10 Marks) Write a program to implement abstraction using abstract classes. Create an abstract class Shape with a method calculateArea() and two subclasses Circle and Rectangle that implement the method.
+abstract class Shape{
+    abstract double calculateArea();
+}
+
+class Circle extends Shape{
+    double calculateArea(){
+        int r = 2;
+        double answer = Math.PI * (r*r);
+        return answer;
+    }
+}
+
+class Rectangle extends Shape{
+    double calculateArea(){
+        int l = 5;
+        int w = 5;
+        return l*w;
+    }
+}
+
+// (5 Marks) Explain encapsulation and implement it by creating a class with private attributes and public getter and setter methods.
+
+// Encapsulation is one of the four fundamental OOP concepts. It involves wrapping data (variables) and code (methods) together as a single unit
+class ImportantPerson{
+    private String name;
+    
+    public void setName(String name){
+        this.name = name;
+    }
+    
+    public String getName(){
+        return name;
+    }
+    
+}
+
+// (5 Marks) Write a program to demonstrate the use of access modifiers (private, protected, and public) in a class.
+class AccessModifiers {
+    // Private variable: accessible only within this class
+    private int privateVar = 1;
+
+    // Protected variable: accessible within the same package and subclasses
+    protected int protectedVar = 2;
+
+    // Public variable: accessible from any other class
+    public int publicVar = 3;
+
+    // Default (no modifier) variable: accessible only within the same package
+    int defaultVar = 4;
+
+    public void display() {
+        System.out.println("Private Variable: " + privateVar);
+        System.out.println("Protected Variable: " + protectedVar);
+        System.out.println("Public Variable: " + publicVar);
+        System.out.println("Default Variable: " + defaultVar);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        AccessModifiers am = new AccessModifiers();
+        am.display();
+        
+        // Accessing the variables directly
+        // System.out.println("Private Variable: " + am.privateVar); // Not accessible
+        System.out.println("Protected Variable: " + am.protectedVar);
+        System.out.println("Public Variable: " + am.publicVar);
+        System.out.println("Default Variable: " + am.defaultVar);
+    }
+}
+
+
+// (5 Marks) Explain the difference between protected and default access modifiers with examples.
+
+package package1;
+
+public class Parent {
+    protected int protectedVar = 10;
+    int defaultVar = 20;
+}
+
+package package2;
+
+import package1.Parent;
+
+public class Child extends Parent {
+    public void display() {
+        System.out.println("Protected Variable: " + protectedVar); // Accessible
+        // System.out.println("Default Variable: " + defaultVar); // Not accessible
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Child c = new Child();
+        c.display();
+    }
+}
+
+
+
+
+
+
+
+
+
