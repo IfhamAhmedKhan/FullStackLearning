@@ -1,0 +1,253 @@
+Section A: MCQ's
+Answer:
+1. (b) Integer, (c) boolean
+2. (c) 3
+3. (b) protected
+4. (a) Overloaded methods must have the same name but different parameters
+
+Section B: Short Answers
+5. 
+class Main {
+    public static void main(String[] args) {
+        // While loop
+        int age = 19;
+        while (age >= 18) {
+            System.out.println("Apple for you");
+            age--;
+        }
+
+        System.out.println("----");
+
+        // Do-while loop
+        int anotherAge = 17;
+        do {
+            System.out.println("Apple for you");
+            anotherAge--;
+        } while (anotherAge >= 18);
+    }
+}
+
+6. 
+class Main {
+    public static void main(String[] args) {
+        int day = 6;
+        switch (day) {
+            case 6:
+                System.out.println("Saturday");
+                break;
+            case 7:
+                System.out.println("Sunday");
+                break;
+            default:
+                System.out.println("Working day");
+        }
+    }
+}
+
+in this program it checks if day is 6 or 7 means weekend or otherwise it tells its working day switch case work like this where we have a variable with data and we check for different case value what should be printed out or what happen with code.
+7. Constructor in java class is important because its used for intilizing values that are passed in its parameter for example:
+
+class Main {
+    public static void main(String[] args) {
+        Cat one = new Cat("Leo", 6);
+        one.printDetails();
+    }
+}
+
+class Cat {
+    private String name;
+    private int age;
+
+    // Constructor
+    public Cat(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public void printDetails() {
+        System.out.println("Name: " + this.name);
+        System.out.println("Age: " + this.age);
+    }
+}
+
+8. encapsulation is done when we create private variable and then we make getter and setter to access them and change its value very simple and here how it's done:
+
+class Main {
+    public static void main(String[] args) {
+        Person one = new Person();
+        one.setName("Ifham");
+        one.setAge(24);
+        System.out.println(one.getName());
+        System.out.println(one.getAge());
+    }
+}
+
+class Person {
+    private String name;
+    private int age;
+
+    // Getter and Setter Methods
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+}
+
+
+Section C: Coding Question
+9. 
+
+class Main {
+    public static void main(String[] args) {
+        Student obj = new Student("Ifham", 24, 'A');
+        System.out.println("Name: " + obj.getName() + "\nAge: " + obj.getAge() + "\nGrade: " + obj.getGrade());
+
+        obj.setName("Aayan");
+        obj.setAge(14);
+        obj.setGrade('B');
+        System.out.println("Name: " + obj.getName() + "\nAge: " + obj.getAge() + "\nGrade: " + obj.getGrade());
+
+        CollegeStudent object = new CollegeStudent("Afnan", 18, 'C', "Computer Science");
+        System.out.println("Name: " + object.getName() + "\nAge: " + object.getAge() + "\nGrade: " + object.getGrade() + "\nMajor: " + object.getMajor());
+    }
+}
+
+class Student {
+    private String name;
+    private int age;
+    private char grade;
+
+    public Student(String name, int age, char grade) {
+        this.name = name;
+        this.age = age;
+        this.grade = grade;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public void setGrade(char grade) {
+        this.grade = grade;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public char getGrade() {
+        return grade;
+    }
+}
+
+class CollegeStudent extends Student {
+    private String major;
+
+    public CollegeStudent(String name, int age, char grade, String major) {
+        super(name, age, grade);
+        this.major = major;
+    }
+
+    public void setMajor(String major) {
+        this.major = major;
+    }
+
+    public String getMajor() {
+        return major;
+    }
+}
+
+
+10.
+class Main {
+    public static void main(String[] args) {
+        try {
+            System.out.println(5 / 0);
+        } catch (ArithmeticException e) {
+            System.out.println("Please don't divide by zero!");
+        } finally {
+            System.out.println("Execution complete");
+        }
+    }
+}
+
+------------------
+class Main {
+    public static void main(String[] args) {
+        try {
+            int age = 17;
+            if (age < 18) {
+                throw new InvalidAgeException("This is an Age exception");
+            } else {
+                System.out.println("Good age");
+            }
+        } catch (InvalidAgeException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+}
+
+class InvalidAgeException extends Exception {
+    public InvalidAgeException(String message) {
+        super(message);
+    }
+}
+
+
+Bonus Question:
+11. 
+class Main {
+    public static void main(String[] args) {
+        Adder obj = new Adder();
+        System.out.println(obj.value(2, 4));
+        System.out.println(obj.value(2, 4, 4));
+        System.out.println(obj.value(2, 2, 2, 2));
+
+        Adder obj2 = new AnotherAdder();
+        System.out.println(obj2.value(2, 4));
+    }
+}
+
+class Adder {
+    // Overloading
+    public int value(int a, int b) {
+        return a + b;
+    }
+
+    public int value(int a, int b, int c) {
+        return a + b + c;
+    }
+
+    public int value(int a, int b, int c, int d) {
+        return a + b + c + d;
+    }
+}
+
+class AnotherAdder extends Adder {
+    @Override
+    public int value(int a, int b) {
+        return a - b;
+    }
+}
+
+So bascially when we inherit a class and we want same name function and same parameter but different working we override them and overloading is like making more parameter in same class of functions and you can have as much as you want.
+I have done both overloading and overriding its simple ;)

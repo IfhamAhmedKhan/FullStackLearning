@@ -1,0 +1,82 @@
+// Test Questions
+
+class Main {
+    
+    public static void main(String[] args) {
+        int[] arr1 = {85, 90, 78, 88, 92};
+        int[] arr2 = {75, 80, 70, 85, 90};
+        Student one = new Student(101,"John Doe",arr1);
+        one.calculateGrade(arr1);
+        one.displayDetails();
+        
+        GraduateStudent two = new GraduateStudent();
+        two.calculateGrade(arr2);
+        two.displayDetails();
+    }
+    
+    
+}
+
+class Student{
+    public static int id;
+    public static String name;
+    public static int[] marks = new int[5];
+    public static int percentage;
+    
+    Student(int id, String name, int[] marks){
+        id = this.id;
+        name = this.name;
+        marks = this.marks;
+    }
+    
+    public static void calculateGrade(int[] marks){
+        percentage = marks[0]+marks[1]+marks[2]+marks[3]+marks[4];
+        percentage = percentage/5;
+        if(percentage>=90){
+            System.out.println("A");
+        }else if(percentage>=80){
+            System.out.println("B");
+        }else if(percentage>=70){
+            System.out.println("C");
+        }else if(percentage>=60){
+            System.out.println("C");
+        }else {
+            System.out.println("F");
+        }
+    }
+    
+    public static void displayDetails(){
+        System.out.println("ID: "+id);
+        System.out.println("Name: "+name);
+        for(int i = 0;i<=4;i++){
+            System.out.println("Subject "+(i+1)+": "+marks[i]);
+        }
+        System.out.println("Grade: "+percentage);
+    }
+}
+
+class GraduateStudent extends Student{
+    private static String degreeProgram;
+    
+    public static String getDegreeProgram(){
+        return degreeProgram;
+    }
+    
+    public static void setDegreeProgram(String program){
+        degreeProgram = this.program;
+    }
+    
+    @Override
+    public static void displayDetails(){
+        System.out.println("ID: "+id);
+        System.out.println("Name: "+name);
+        for(int i = 0;i<=4;i++){
+            System.out.println("Subject "+(i+1)+": "+marks[i]);
+        }
+        System.out.println("Grade: "+percentage);
+        System.out.println("Degree Program: "+getDegreeProgram());
+    } 
+    
+    
+}
+
