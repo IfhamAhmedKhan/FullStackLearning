@@ -1,0 +1,105 @@
+---------------1D array-----------------
+Q1)
+class Main {
+    public static void main(String[] args) {
+        // Find Maximum and Minimum: Write a program to find the maximum and minimum values in an array of integers.
+        int[] arr1 = {0,2,5,1,3};
+        int max = arr1[0];
+        int min = arr1[0];
+        for(int i = 1;i <= arr1.length-1;i++){
+            if(max<arr1[i]){
+                max = arr1[i];
+            }
+            if(min>arr1[i]){
+                min = arr1[i];
+            }
+        }
+        System.out.println("Max: "+max);
+        System.out.println("Min: "+min);
+    }
+}
+
+--------------------------
+Q2) 
+class Main {
+    public static void main(String[] args) {
+        int[] arr1 = {1,2,3,4,5};
+        Main.ReverseArray(arr1);
+    }
+    
+    // Reverse an Array: Implement a function that reverses a given array.
+    public static void ReverseArray(int[] arr){
+        int[] ReverseArr = new int[arr.length];
+        int j = 0;
+        for(int i = arr.length-1;i>=0;i--){
+            ReverseArr[j] = arr[i];
+            j++;
+        }
+        for(int i = 0;i<ReverseArr.length;i++){
+            System.out.println(ReverseArr[i]);
+        }
+    }
+}
+
+-------------------------
+Q3)
+class Main {
+    public static void main(String[] args) {
+        // Sum of Elements: Calculate the sum of all elements in an array.
+        int arr[] = {1,2,3};
+        int sum = 0;
+        for(int i=0;i<arr.length;i++){
+            sum += arr[i];
+        }
+        System.out.println("Sum: "+sum);
+    }
+    
+}
+
+----------------------
+Q4)
+class Main {
+    public static void main(String[] args) {
+        // Search an Element: Implement a linear search to check if an element exists in an array.
+        int[] arr = {4,2,1,5,1};
+        int find = 5;
+        boolean condition = false;
+        int value = 0;
+        for(int i = 0;i<arr.length;i++){
+            if(arr[i]==find){
+                condition = true;
+                value = i;
+                break;
+            }
+        }
+        if(condition){
+            System.out.println("Element exists in array at "+(value+1)+" index");
+        }else{
+            System.out.println("Element doesn't exist in the array");
+        }
+    }
+}
+
+-----------------------
+Q5)
+class Main{
+    public static void main(String[] args){
+        // Sort an Array: Sort the array using Bubble Sort or any sorting algorithm
+        int[] arr = {5,4,3,2,1};
+        int temp = 0;
+        for(int i = 0;i<arr.length;i++){
+            for(int j = 0;j<arr.length;j++){
+                if(arr[i]<arr[j]){
+                    temp = arr[j];
+                    arr[j] = arr[i];
+                    arr[i] = temp;
+                }
+            }
+        }
+        for(int k=0;k<arr.length;k++){
+            System.out.println(arr[k]);
+        }
+    }
+}
+
+---------------------
