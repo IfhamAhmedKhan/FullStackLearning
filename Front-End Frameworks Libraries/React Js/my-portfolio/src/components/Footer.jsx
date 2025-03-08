@@ -23,7 +23,7 @@ const Footer = () => {
           </a>
         </div>
       <div className="container">
-        <p>&copy; 2024 Ifham Ahmed Khan. </p>
+        <p>&copy; 2025 Ifham Ahmed Khan. </p>
         <p>All Rights Reserved.</p>
       </div>
     </footer>
